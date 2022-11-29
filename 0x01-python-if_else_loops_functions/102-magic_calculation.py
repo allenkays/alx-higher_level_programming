@@ -4,7 +4,7 @@
     Returns c if a < b
     returns a +b if !(a < b) and c >b
     if none of the cases are satisfied it
-    returns a*b-c 
+    returns a*b-c
 """
 
 
@@ -15,4 +15,4 @@ def magic_calculation(a, b, c):
     elif c > b:
         return a + b
     else:
-        return a * b - c 
+        return a * b - c
