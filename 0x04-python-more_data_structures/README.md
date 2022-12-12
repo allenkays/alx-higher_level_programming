@@ -90,7 +90,7 @@ Write a function that returns a new dictionary with all values multiplied by 2
     - Returns a new dictionary
     - You are not allowed to import any module
 
-###
+### 10. Best score
 
 Write a function that returns a key with the biggest integer value.
 
