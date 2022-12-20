@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# 3-square.py
+"""calculate area of a square"""
 
 
 class Square:
