@@ -46,7 +46,12 @@ class Square:
 
     @property
     def position(self):
-        """Get/set the current position of the square."""
+        """Get/set the current position of the square.
+        Args:
+            position coordinates
+        Returns:
+            position
+        """
         return (self.__position)
 
     @position.setter
@@ -72,5 +77,8 @@ class Square:
         if self.__size == 0:
             print()
             return
-        for i in range(self.__size):
-            print("".join(["#" for j in range(self.__size)]))
+         for y in range(self.__position[1]):
+                print()
+            for x in range(self.__size):
+                print(' ' * self.__position[0], end='')
+                print('#' * self.__size)
