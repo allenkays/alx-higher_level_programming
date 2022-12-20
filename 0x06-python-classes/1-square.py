@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# 1-square.py
+""" Add size to square"""
 
 
 class Square:
