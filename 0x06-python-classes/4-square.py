@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# 4-square.py
+"""setter and getter option creation"""
 
 
 class Square:
@@ -9,10 +11,12 @@ class Square:
 
     @property
     def size(self):
+        """getter"""
         return self.__size
 
     @size.setter
     def size(self, value):
+        """setas the value to params"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         else:
