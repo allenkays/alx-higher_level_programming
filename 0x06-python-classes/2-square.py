@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# 2-square.py
+""" create methods for the class"""
 
 
 class Square:
