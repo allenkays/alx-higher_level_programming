@@ -26,7 +26,7 @@ class Rectangle:
         return self.__width
 
     @width.setter
-    def width(self):
+    def width(self, val):
         """check type and value of width input"""
         if not isinstance(val, int):
             raise TypeError("width must be an integer")
@@ -40,7 +40,7 @@ class Rectangle:
         return self.__height
 
     @height.setter
-    def height(self):
+    def height(self, val):
         """check height type and value input"""
         if not isinstance(val, int):
             raise TypeError("height must be an integer")
