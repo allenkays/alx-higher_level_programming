@@ -1,7 +1,7 @@
 #!/usr/bin/pyrthon3
 
 """
-Empty class rectangle 
+Empty class rectangle
 """
 
 
