@@ -13,4 +13,4 @@ def pascal_triangle(n=4500):
             pascal[i][j+1] = pascal[i-1][j] + pascal[i-1][j+1]
             pascal[i][i-j-1] = pascal[i-1][j] + pascal[i-1][j+1]
 
-    return pascal 
+    return pascal
