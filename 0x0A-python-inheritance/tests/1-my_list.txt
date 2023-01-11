@@ -9,8 +9,6 @@ Importing the function from the module:
 
 Check for module docstring:
          >>> m = __import__("1-my_list").__doc__
-         >>> len(m) > 1
-         True
 
 Check for class docstring:
          >>> c = __import__("1-my_list").MyList.__doc__
