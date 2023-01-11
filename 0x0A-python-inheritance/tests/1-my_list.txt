@@ -1,4 +1,4 @@
-he ``1-my_list`` module
+The ``1-my_list`` module
 ======================
 
 Using ``MyList``
@@ -31,7 +31,7 @@ Check for empty list:
 	 >>> l.print_sorted()
 	 []
 
-Check that appendking works:
+Check that appendng works:
 	 >>> l.append(1)
 	 >>> l.append(2)
 	 >>> l.append(3)
