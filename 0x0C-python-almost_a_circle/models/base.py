@@ -6,7 +6,6 @@ import csv
 import turtle
 
 
-
 class Base:
     """
         Represents the "base" for all other classes in project 0x0C*.
