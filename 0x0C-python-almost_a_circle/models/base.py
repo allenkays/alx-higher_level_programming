@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # base class
-
 import json
 import csv
 import turtle
@@ -175,5 +174,3 @@ class Base:
             turt.hideturtle()
 
         turtle.exitonclick()
-
-
