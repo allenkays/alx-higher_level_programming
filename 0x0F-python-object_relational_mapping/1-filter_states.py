@@ -21,7 +21,7 @@ if __name__ == "__main__":
     # Execute SQL query to retrieve all states from hbtn_0e_0_usa
     cur.execute("SELECT * FROM states \
                 WHERE name LIKE BINARY 'N%' \
-                ORDER BY state.id ASC")
+                ORDER BY states.id ASC")
 
     # Fetch all entries from table states with name starting with N
     rows = cur.fetchall()
