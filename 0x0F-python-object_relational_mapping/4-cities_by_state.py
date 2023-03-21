@@ -24,7 +24,18 @@ if __name__ == '__main__':
 
     # Execute query
     cursor = db.cursor()
-    cursor.execute('SELECT * FROM cities ORDER BY id ASC')
+    cursor.execute('''
+        SELECT
+            cities.id, cities.name, states.name
+        FROM
+            cities
+        JOIN
+            states
+        ON
+            citie.state_id=states.id
+        ORDER BY
+            cities.id ASC
+        ''')
 
     # Fetch results
     rows = cursor.fetchall()
