@@ -7,11 +7,10 @@ import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    """
+    #check number of arguments given 
     if len(sys.argv) != 4:
         print('Usage: {} <username> <password> <database>'.format(sys.argv[0]))
         sys.exit(1)
-    """
 
     username, password, database = sys.argv[1:]
 
@@ -33,18 +32,18 @@ if __name__ == '__main__':
 
     # Execute query
     cursor = db.cursor()
-    cursor.execute('''
+    cursor.execute("
         SELECT
             cities.id, cities.name, states.name
         FROM
             cities
-        JOIN
+        INNER JOIN
             states
         ON
             cities.state_id=states.id
         ORDER BY
             cities.id ASC
-        ''')
+        ")
 
     # Fetch results
     rows = cursor.fetchall()
