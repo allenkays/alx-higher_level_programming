@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+This script prints out the cities and states in which they are found
+"""
+
 import MySQLdb
 import sys
 
