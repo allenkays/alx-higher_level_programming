@@ -20,9 +20,12 @@ if __name__ == '__main__':
             host='localhost',
             port=3306
             )
+
+    """
     #except Exception as e:
     print('Error connecting to MySQL server:', e)
     sys.exit(1)
+    """
 
     # Execute query
     cursor = db.cursor()
