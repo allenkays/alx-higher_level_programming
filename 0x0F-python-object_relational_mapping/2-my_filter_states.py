@@ -25,6 +25,9 @@ if __name__ == '__main__':
             WHERE name LIKE BINARY '{}' \
             ORDER BY states.id ASC".format(argv[4]))
 
+    # retrieve entries from table states with given criteria
+    rows = cursor.fetchall()
+
     # Display the query output
     for row in rows:
         print(row)
