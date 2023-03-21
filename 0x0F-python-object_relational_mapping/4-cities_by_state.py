@@ -32,7 +32,7 @@ if __name__ == '__main__':
         JOIN
             states
         ON
-            citie.state_id=states.id
+            cities.state_id=states.id
         ORDER BY
             cities.id ASC
         ''')
