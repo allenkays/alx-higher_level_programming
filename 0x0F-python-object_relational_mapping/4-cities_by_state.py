@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
     # Execute query
     cursor = db.cursor()
-    cursor.execute("
+    cursor.execute("""
         SELECT
             cities.id, cities.name, states.name
         FROM
@@ -42,14 +42,15 @@ if __name__ == '__main__':
             cities.state_id=states.id
         ORDER BY
             cities.id ASC
-        ")
+        """)
 
     # Fetch results
     rows = cursor.fetchall()
 
     # Print results
-    for row in rows:
-        print(row)
+    if rows is not None:
+        for row in rows:
+            print(row)
 
     # Close cursor and database connection
     cursor.close()
