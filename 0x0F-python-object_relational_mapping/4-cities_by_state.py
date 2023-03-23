@@ -1,57 +1,38 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
-This script prints out the cities and states in which they are found
+This script lists all cities from
+the database `hbtn_0e_4_usa`.
 """
+
 import MySQLdb
-import sys
+from sys import argv
 
 if __name__ == '__main__':
-    #check number of arguments given 
-    if len(sys.argv) != 4:
-        print('Usage: {} <username> <password> <database>'.format(sys.argv[0]))
-        sys.exit(1)
-
-    username, password, database = sys.argv[1:]
-
-    # Connect to MySQL server
-    # try:
-    db = MySQLdb.connect(
-            user=username,
-            passwd=password,
-            db=database,
-            host='localhost',
-            port=3306
-            )
-
     """
-    #except Exception as e:
-    print('Error connecting to MySQL server:', e)
-    sys.exit(1)
+    Access to the database and get the cities
+    from the database.
     """
 
-    # Execute query
-    cursor = db.cursor()
-    cursor.execute("""
-        SELECT
-            cities.id, cities.name, states.name
-        FROM
-            cities
-        INNER JOIN
-            states
-        ON
-            cities.state_id=states.id
-        ORDER BY
-            cities.id ASC
+    db = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
+                         passwd=argv[2], db=argv[3])
+
+    with db.cursor() as cur:
+        cur.execute("""
+            SELECT
+                cities.id, cities.name, states.name
+            FROM
+                cities
+            JOIN
+                states
+            ON
+                cities.state_id = states.id
+            ORDER BY
+                cities.id ASC
         """)
 
-    # Fetch results
-    rows = cursor.fetchall()
+        rows = cur.fetchall()
 
-    # Print results
     if rows is not None:
         for row in rows:
             print(row)
 
-    # Close cursor and database connection
-    cursor.close()
-    db.close()
