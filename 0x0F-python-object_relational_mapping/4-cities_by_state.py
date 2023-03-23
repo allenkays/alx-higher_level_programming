@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import MySQLdb
 import sys
 
@@ -29,7 +30,7 @@ if __name__ == '__main__':
             cities.id, cities.name, states.name
         FROM
             cities
-        JOIN
+        INNER JOIN
             states
         ON
             citie.state_id=states.id
