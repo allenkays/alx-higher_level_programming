@@ -10,10 +10,10 @@ if __name__ == "__main__":
     '''
     database connection
     '''
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
+    mysql_username = argv[1]
+    mysql_password = argv[2]
+    db_name = argv[3]
+    state_name = argv[4]
 
     # connect to MySQL server on localhost
     db = MySQLdb.connect(
