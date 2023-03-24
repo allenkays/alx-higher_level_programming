@@ -42,7 +42,7 @@ if __name__ == "__main__":
         rows = cursor.fetchall()
 
         if rows is not None:
-            print(row)
+            print(", ".joim([row[1] for row in rows]))
 
     cursor.close()
     db.close()
