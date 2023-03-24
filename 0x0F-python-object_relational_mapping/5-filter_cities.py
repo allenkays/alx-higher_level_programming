@@ -15,7 +15,7 @@ if __name__ == "__main__":
             username=argv[1],
             passwd=argv[2],
             database=argv[3],
-            state_name=[argv4],
+            state_name=argv{4],
             host="localhost",
             port=3306
             )
