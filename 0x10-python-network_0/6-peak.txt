@@ -1,1 +1,2 @@
+# Time complexity of the peak function
 O(log(n))
