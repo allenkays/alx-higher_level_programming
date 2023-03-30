@@ -1,3 +1,3 @@
 #!/usr/bin/bash
-response=$(curl -s -w "%{size_download}" -o /dev/null $1)
-echo $response
+# Print the bytesize of the http header of a given url
+curl -s -w -o /dev/null $1 | wc -c
