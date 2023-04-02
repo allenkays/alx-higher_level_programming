@@ -13,7 +13,8 @@ if __name__ == "__main__":
 
     url = "https://alx-intranet.hbtn.io/status"
     response = requests.get(url)
+    body = response.text
     print(f"Body response:\n"
-          "\t - type: {type(response)}\n"
-          "\t - content: {response.text}"
+          f"\t - type: {type(body)}\n"
+          f"\t - content: {body}"
           )
