@@ -13,6 +13,5 @@ if __name__ == "__main__":
     getting value of given url
     """
 
-    url = request.get(argv[1])
-    header = url.headers.get('X-Request-Id')
-    print(header)
+    response = requests.get(argv[1])
+    print(response.headers.get('X-Request-Id'))
