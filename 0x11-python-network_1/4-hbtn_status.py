@@ -11,10 +11,6 @@ if __name__ == "__main__":
     requests module works as shown
     """
 
-    url = "https://alx-intranet.hbtn.io/status"
-    response = requests.get(url)
-    body = response.text
-    print(f"Body response:\n"
-          f"\t - type: {type(body)}\n"
-          f"\t - content: {body}"
-          )
+    url = requests.get("https://alx-intranet.hbtn.io/status")
+    print("Body response:\n\t - type: {}\n\t - content: {}"
+          .format(type(url.text), url.text))
