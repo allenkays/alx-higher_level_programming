@@ -1,18 +1,24 @@
 #!/usr/bin/node
-// This script prints all characters of a Star Wars movie
-// Output characters name in the same order of the list  “characters” in the /films/ response
+// Print characters
+// outputs in same order as characters list
 
 const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+const url = 'https://swapi.co/api/films/' + process.argv[2];
 
-function printCharacters (characters, idx) {
-  request(characters[idx], (err, res, body) => {
-    if (err) {
-      console.log(err);
-    } else {
+request(url, function (error, response, body) {
+  if (!error) {
+    let characters = JSON.parse(body).characters;
+    printCharacters(characters, 0);
+  }
+});
+
+//recursive function call
+function printCharacters (characters, index) {
+  request(characters[index], function (error, response, body) {
+    if (!error) {
       console.log(JSON.parse(body).name);
-      if (idx + 1 < characters.length) {
-        printCharacters(characters, idx + 1);
+      if (index + 1 < characters.length) {
+        printCharacters(characters, index + 1);
       }
     }
   });
