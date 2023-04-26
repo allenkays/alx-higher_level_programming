@@ -1,24 +1,31 @@
 #!/usr/bin/node
-// Print characters
-// outputs in same order as characters list
 
 const request = require('request');
-const url = 'https://swapi.co/api/films/' + process.argv[2];
+const url = 'http://swapi.co/api/films/' + process.argv[2];
 
-request(url, function (error, response, body) {
-  if (!error) {
-    let characters = JSON.parse(body).characters;
-    printCharacters(characters, 0);
+let movieCharacters = [];
+const characterNames = {};
+request({ url: url, json: true }, (err, response) => {
+  if (err) {
+    console.error(err);
+  } else {
+    movieCharacters = response.body.characters;
+    for (const index of movieCharacters) {
+      request(index, { json: true }, (err, response) => {
+        if (err) {
+          console.log(err);
+        }
+        getName(index, response.body.name);
+      });
+    }
   }
 });
 
-function printCharacters (characters, index) {
-  request(characters[index], function (error, response, body) {
-    if (!error) {
-      console.log(JSON.parse(body).name);
-      if (index + 1 < characters.length) {
-        printCharacters(characters, index + 1);
-      }
+function getName (url, name) {
+  characterNames[url] = name;
+  if (Object.entries(characterNames).length === movieCharacters.length) {
+    for (const idx of movieCharacters) {
+      console.log(characterNames[idx]);
     }
-  });
+  }
 }
